@@ -21,7 +21,7 @@ int binhNuoc(int *c, int m, int n, int *s) {
 }
 
 int main() {
-    int a[5] ={10, 20, 30, 1, 8};
+    int a[5] ={10, 20, 30, 1, 9};
     int s[5];
     int n = 10;
     int m = 5;
