@@ -19,7 +19,7 @@ void xuLy(int n, int X[], int T[], int i){
 }
 
 int main(){
-    int n=5;
+    int n=4;
     int X[n+1]; X[0] = 1;
     int T[n+1]; T[0] = 0;
     xuLy(n, X, T, 1);
