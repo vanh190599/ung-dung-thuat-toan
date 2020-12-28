@@ -32,8 +32,8 @@ int main() {
     int n = strlen(s);
     int z[n];
     Z_algo(s,z);
-    int dem=0;
 
+    int dem = 0;
     for (int i=0; i<n; ++i){
         if (z[i]==4) {
              dem++;
