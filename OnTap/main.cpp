@@ -2,6 +2,45 @@
 
 using namespace std;
 
+/** cach xep 3 sinh vien vao ban an **/
+int *x;
+int *dd;
+int n;
+
+void xuat(){
+    for (int i=1; i<=n; i++) {
+        if (x[i]==1) cout<<"mot ";
+        else if (x[i]==2) cout<<"hai ";
+        else cout<<"ba ";
+    }
+    cout<<"\n";
+}
+
+void Try(int k){
+   for (int i=1; i<=n; i++) {
+        if (dd[i]==0) {
+            x[k]=i;
+            if (k==n) xuat();
+            else {
+                dd[i] = 1;
+                Try(k+1);
+                dd[i] = 0;
+            }
+        }
+    }
+}
+int main(){
+    n = 3;
+    x = new int[n+1];
+    dd = new int[n+1];
+    for (int i=1; i<=n; i++) {
+        dd[i] = 0;
+    }
+    Try(1);
+    return 0;
+}
+
+/**
 int fisrt(char ch, int l, int r, string s){
     while(l<=r){
         int mid = (l + r) / 2;
