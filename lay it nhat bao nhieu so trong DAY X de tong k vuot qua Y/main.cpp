@@ -1,8 +1,7 @@
 #include <iostream>
 using namespace std;
 
-//*Câu 2:  cho dãy số thực x và số thực y. Cho biết cần lấy nhiều nhất bao nhiêu số trong x để tổng của chúng k vượt quá y
-float binhNuoc(float *c, int m, float n, float *s) {
+int binhNuoc(int *c, int m, int n, int *s) {
     for(int i=0;i<m;i++) {
         s[i]=0;
     }
@@ -22,9 +21,9 @@ float binhNuoc(float *c, int m, float n, float *s) {
 }
 
 int main() {
-    float a[5] ={100.5,25.6,10.1,5.2,1.8};
-    float s[5];
-    float n = 19.9;
+    int a[5] ={10, 20, 30, 1, 8};
+    int s[5];
+    int n = 10;
     int m = 5;
 
     cout<<"toi thieu: "<<binhNuoc(a,m,n,s)<<"\n\n";
