@@ -1,47 +1,39 @@
-#include <iostream>
-#include <algorithm>
+#include <bits/stdc++.h>
+
 using namespace std;
 
-string s;
-char p;
-int a[100001],b;
-
-int binsearchLEFT(int x, int l, int r)
-{
-	while (l<=r)
-	{
-		int mid = (l+r)/2;
-		if (x<=a[mid]) r=mid-1;
-		else l=mid+1;
-	}
-	return l;
+int fisrt(char ch, int l, int r, string s){
+    while(l<=r){
+        int mid = (l + r) / 2;
+        if(ch<=s[mid]) r = mid - 1;
+        else l = mid + 1;
+    }
+    if(l>=s.length() || l < 0) return -1;
+    else return l;
 }
-int binsearchRIGHT(int x, int l, int r)
-{
-	while (l<=r)
-	{
-		int mid = (l+r)/2;
-		if (x<a[mid]) r=mid-1;
-		else l=mid+1;
-	}
-	return r;
+int last(char ch, int l, int r, string s){
+    while(l<=r){
+        int mid = (l + r) / 2;
+        if(ch<s[mid]) r = mid - 1;
+        else l = mid + 1;
+    }
+    if(r>=s.length() || r < 0) return -1;
+    if(s[r] != ch) return -1;
+    else return r;
 }
+int main()
+{
+    string s = "ahsfjhfacafg";
+    char ch = 'a';
+    sort(s.begin(),s.end());
 
-int main() {
-	s="abbbbbbcbcc";
-	p='b';
+    int firstIndex = fisrt(ch,0,s.length() - 1,s);
+    int lastIndex = last(ch,0,s.length() - 1,s);
 
-	for (int i=0;i<s.length();i++)
-		a[i]=(int)(s[i]);
-	b=(int)(p);
-
-	sort(a,a+s.length());
-
-	int LEFT = binsearchLEFT(b,0,s.length()-1);
-	int RIGHT = binsearchRIGHT(b,0,s.length()-1);
-	if (s[LEFT] != p || s[RIGHT] != p)
-		cout << 0 << endl;
-	else
-		cout << RIGHT - LEFT + 1 << endl;
-	return 0;
+    if(lastIndex == -1){
+        std::cout << 0 << std::endl;
+    } else {
+        cout<<lastIndex - firstIndex + 1;
+    }
+    return 0;
 }
