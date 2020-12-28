@@ -11,18 +11,18 @@ void MaxMin(int a[],int l, int r,int &min, int &max) {
 		int mid = (l + r) / 2;
 		min1 = l, max1 = mid;
 		min2 = mid + 1, max2 = r;
-		MaxMin(a, l, mid,min1,max1);
+		MaxMin(a, l, mid, min1, max1);
 		MaxMin(a, mid + 1, r,min2,max2);
+
 		if (min1 < min2) {
 			min = min1;
-		}
-		else {
+		} else {
 			min = min2;
 		}
+
 		if (max1 < max2) {
 			max = max2;
-		}
-		else {
+		} else {
 			max = max1;
 		}
 	}
@@ -32,7 +32,7 @@ int main() {
 	int min = c[0];
 	int max = c[4];
 
-	MaxMin(c, 0, 4,min, max);
+	MaxMin(c, 0, 4, min, max);
 	cout << max << " - " << min << endl;
 
 	return 0;
