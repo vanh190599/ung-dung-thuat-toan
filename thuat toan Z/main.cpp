@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void Z(const char *s,int *z){
+void Z_algo(const char *s,int *z){
     int n=strlen(s),l=0,r=0;
 
     for(int i=1; i<n; i++){
@@ -29,10 +29,9 @@ void Z(const char *s,int *z){
 
 int main() {
     char *s="viet$viet nam o viet nam chu khong phải viet nam thi o mo";
-
-    int n=strlen(s);
+    int n = strlen(s);
     int z[n];
-    Z(s,z);
+    Z_algo(s,z);
     int dem=0;
 
     for (int i=0; i<n; ++i){
